@@ -2,6 +2,7 @@ import os
 import time
 import feedparser
 from telegram import Bot
+from telegram.request import HTTPXRequest
 
 # ======================
 # 🔴 تنظیمات اصلی
@@ -9,7 +10,8 @@ from telegram import Bot
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-bot = Bot(token=TOKEN)
+request = HTTPXRequest()
+bot = Bot(token=TOKEN, request=request)
 
 # ======================
 # 🟢 RSS خبرگزاری‌ها
